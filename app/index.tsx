@@ -32,7 +32,7 @@ export default function HomeScreen() {
       headerPosition.value - (previousPosition.value - contentOffset.y);
 
     if (isScrollingUp && headerPosition.value < hiddenHeaderHeight.value) {
-      headerPosition.value = clamp(contentOffset.y, headerPosition.value, top);
+      headerPosition.value = clamp(top, 0, hiddenHeaderHeight.value);
     } else if (!isScrollingUp && headerPosition.value > 0) {
       headerPosition.value = clamp(top, 0, headerPosition.value);
     }
